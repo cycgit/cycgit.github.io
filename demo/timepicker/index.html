@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>时间选择</title>
+     <link rel="stylesheet" href="../../dist/css/web-style.css">
+    <style>
+        .dp{
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-920" style="margin-top: 50px" id="app">
+        <div class="row">
+            <div class="col-4">
+
+
+            </div>
+
+
+            <div class="col-4">
+
+                <div class="col-4 label">选择时间:</div>
+                <div class="col-8">
+                    <v-time :val.sync="time" v-on:time-change="ss"></v-time>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+<script src="../../lib/vue.min.js"></script>
+<script src="timePicker.js"></script>
+
+<script>
+    let timePicker = components.timePicker
+    var app = new Vue({
+        el: '#app',
+        data:{
+            time: ''
+        },
+        methods:{
+            ss: function (val) {
+                console.log(`接收到了${val}`)
+            }
+        },
+        components:{
+            'v-time': timePicker
+        }
+    })
+
+
+//    app.time = '9:20:35'
+
+
+</script>
+</body>
+</html>
