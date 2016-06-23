@@ -15,8 +15,10 @@
     <div class="box-920" style="margin-top: 50px" id="app">
         <div class="row">
             <div class="col-4">
-
-
+                <div class="col-4 label">选择日期:</div>
+                <div class="col-8">
+                    <v-date :val="date" :showtime="true"></v-date>
+                </div>
             </div>
 
 
@@ -36,12 +38,16 @@
 
 <script src="../../lib/vue.min.js"></script>
 <script src="timePicker.js"></script>
-
+<script src="datePicker.js"></script>
 <script>
+   
     let timePicker = components.timePicker
+    let datePicker = components.datePicker
+
     var app = new Vue({
         el: '#app',
         data:{
+            date: '1466653094167',
             time: ''
         },
         methods:{
@@ -50,12 +56,11 @@
             }
         },
         components:{
-            'v-time': timePicker
+            'v-time': timePicker,
+            'v-date': datePicker,
         }
     })
 
-
-//    app.time = '9:20:35'
 
 
 </script>
